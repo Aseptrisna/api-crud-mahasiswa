@@ -48,7 +48,7 @@ const getStudentByGuid = async (req, res) => {
 const updateStudent = async (req, res) => {
   try {
     const student = await studentService.updateStudentByGuid(
-      req.params.id,
+      req.params.guid,
       req.body
     );
     if (!student) {

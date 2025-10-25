@@ -2,7 +2,7 @@
 const studentService = require("../service/student-service");
 const { sendSuccess, sendError } = require("../util/response");
 const logger = require("../util/logger");
-const { v4: uuidv4 } = await import('uuid');
+const { v4: uuidv4 } = require("uuid");
 
 
 const createStudent = async (req, res) => {

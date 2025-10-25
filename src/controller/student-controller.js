@@ -38,6 +38,7 @@ const getStudentByGuid = async (req, res) => {
     if (!student) {
       return sendError(res, "Student not found", 404);
     }
+  
     sendSuccess(res, student, "Student retrieved successfully");
   } catch (error) {
     logger.error(error);
@@ -47,6 +48,7 @@ const getStudentByGuid = async (req, res) => {
 
 const updateStudent = async (req, res) => {
   try {
+    console.log(req.body)
     const student = await studentService.updateStudentByGuid(
       req.params.guid,
       req.body
@@ -54,6 +56,8 @@ const updateStudent = async (req, res) => {
     if (!student) {
       return sendError(res, "Student not found", 404);
     }
+    
+    console.log(student)
     sendSuccess(res, student, "Student updated successfully");
   } catch (error) {
     logger.error(error);

@@ -15,7 +15,10 @@ const getStudentByGuid = async (guid) => {
 };
 
 const updateStudentByGuid = async (guid, studentData) => {
-    return await Student.findOneAndUpdate(guid, studentData, { new: true });
+   // return await Student.findOneAndUpdate(guid, studentData, { new: true });
+    console.log(guid);
+    console.log(studentData);
+    return await Student.findOneAndUpdate({ guid }, studentData, { new: true });
 };
 
 const deleteStudentByGuid = async (guid) => {
